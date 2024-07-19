@@ -20,6 +20,7 @@ checkbox.name = "ingredient";
 //this assigns the checkbox to each text of the item on the list
 checkbox.value = items[i].textContent;
 
+
 //add label to the checkbox
 var label = document.createElement('label');
 label.htmlFor = "ingredient" + i;
@@ -30,7 +31,19 @@ label.appendChild(document.createTextNode(" ")) //to have a space b/t box and te
 // ingList.appendChild(checkbox);
 // ingList.appendChild(label);
 
+//add event listene to checkbox
+checkbox.addEventListener('change', function() {
+    //add condition if checked
+    if (checkbox.checked) {
+        //tried to use class name googgle more efficient name to both account for when clicked and unclicked
+        items[i].classList.add('checked')
+    } else {
+        items[i].classList.remove('checked')
+    }
+})
+
 //found method insertBefore() that will add a checbox to each iteration of ol 
 items[i].insertBefore(checkbox, items[i].firstChild)
 items[i].insertBefore(label, items[i].firstChild)
 }
+

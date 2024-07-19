@@ -28,3 +28,7 @@ h1, h2, p {
     float: left;
     margin-left: 30px;
 }
+
+.checked {
+    text-decoration: line-through;
+}
