@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(161, 137, 121);
+    margin-left: 20px;
+}
+
+h1, h2, p {
+    color: rgb(55, 39, 7);
+}
+
+.rubik-mono-one-regular, h1, h2 {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  #main-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+h1:hover {
+    transform: scale(1.05);
+}
+
+  ul {
+    list-style-type: none;
+    padding-left: 5px;
+  }
+
+  .left, .right {
+    margin-top: 30px;
+}
+
+
+.checked {
+    text-decoration: line-through;
+}
+
+.navbar {
+    background-color: rgb(55, 39, 7);
+}
+
+.navbar-brand, .nav-link {
+    color: rgb(161, 137, 121) !important;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255) !important;
+}
