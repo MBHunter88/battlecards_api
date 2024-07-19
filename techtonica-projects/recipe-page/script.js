@@ -24,7 +24,8 @@ checkbox.value = items[i].textContent;
 //add label to the checkbox
 var label = document.createElement('label');
 label.htmlFor = "ingredient" + i;
-label.appendChild(document.createTextNode(" ")) //to have a space b/t box and text
+label.style.marginLeft = "10px"
+label.appendChild(document.createTextNode("  ")) //to have a space b/t box and text
 
 
 //how to add checkboxes before each item instead of appendeding to end of list?
