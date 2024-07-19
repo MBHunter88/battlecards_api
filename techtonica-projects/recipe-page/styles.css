@@ -5,3 +5,9 @@ body {
 h1, h2, p {
     color: rgb(55, 39, 7);
 }
+
+.rubik-mono-one-regular, h1, h2 {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
