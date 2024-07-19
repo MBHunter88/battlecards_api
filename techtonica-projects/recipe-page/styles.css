@@ -14,22 +14,26 @@ h1, h2, p {
   }
 
   .description {
-    width: 600px;
+    width: 100%;
   }
 
-  .left {
-    width: 600px;
-    float: left;
+  .left, .right {
     margin-top: 30px;
-    
-}
-
-.right {
-    width: 600px;
-    float: left;
-    margin-left: 30px;
 }
 
 .checked {
     text-decoration: line-through;
+}
+
+.navbar {
+    background-color: rgb(55, 39, 7);
+}
+
+.navbar-brand, .nav-link {
+    color: rgb(161, 137, 121) !important;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255) !important;
 }
