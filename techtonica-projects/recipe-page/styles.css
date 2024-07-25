@@ -129,6 +129,7 @@ h1:hover {
 @media (min-width: 1025px) {
   h1 {
       font-size: 2em;
+      /* test color: green; */
   }
 
   .container {
