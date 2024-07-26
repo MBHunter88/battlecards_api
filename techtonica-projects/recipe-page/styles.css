@@ -58,6 +58,22 @@ h1:hover {
     color: rgb(255, 255, 255) !important;
 }
 
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .navbar {
+  background-color: #555;
+}
+
+body.dark-mode .btn {
+  background-color: #444;
+  color: #fff;
+}
+
+
 /* Mobile devices (portrait and landscape) */
 @media (max-width: 600px) {
   .navbar-brand {
