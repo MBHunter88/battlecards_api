@@ -48,3 +48,11 @@ items[i].insertBefore(checkbox, items[i].firstChild)
 items[i].insertBefore(label, items[i].firstChild)
 }
 
+//dark/light toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleModeButton = document.getElementById('toggle-mode');
+    
+    toggleModeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+});
