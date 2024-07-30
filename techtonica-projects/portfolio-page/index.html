@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Page</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -26,29 +27,41 @@
             </ul>
         </div>
     </nav>
-    <header>
-        <img src="/Users/tpl1122_19/Desktop/-techtonica-assignments/techtonica-projects/portfolio-page/images/5AF08166-4DA9-403C-B6B4-8799B150D18B-removebg-preview (1).jpg" alt="Michelle's Photo">
+    <header class="mx-3">
+        <img class="main-img" src="/Users/tpl1122_19/Desktop/-techtonica-assignments/techtonica-projects/portfolio-page/images/headshot.jpg" alt="Michelle's Photo">
         <h1>Michelle's Portfolio</h1>
     </header>
     
-    <main>
+    <main class="mx-3">
         <section id="about">
             <h2>About Me</h2>
             <p>Write a brief introduction about yourself here.</p>
         </section>
-        
         <section id="projects">
             <h2>Projects</h2>
-            <article>
-                <h3>Recipe Page</h3>
-                <p>Interactive recipe webapage showcasing responsiveness and DOM manipulation.</p>
-                <a href="https://github.com/MBHunter88/-techtonica-assignments/tree/main/techtonica-projects/recipe-page" target="_blank">View Project</a>
-            </article>
-            <!-- Add more projects as needed -->
+            <div class="row">
+                <div class="col-md-6">
+                    <article>
+                        <h3>Recipe Page</h3>
+                        <p>Interactive recipe webapage showcasing responsiveness and DOM manipulation.</p>
+                        <a href="https://github.com/MBHunter88/-techtonica-assignments/tree/main/techtonica-projects/recipe-page" target="_blank">View Project</a>
+                    </article>
+                </div>
+                 <!-- Add more projects as needed -->
+                <div class="col-md-6">
+                    <article>
+                        <h3>Project Title</h3>
+                        <p>Description of the project.</p>
+                        <a href="link-to-project" target="_blank">View Project</a>
+                    </article>
+                </div>
+            </div>
         </section>
+           
+       
     </main>
     
-    <footer id="contact">
+    <footer id="contact" class="mx-3">
         <h2>Contact Me</h2>
         <p>You can find me on:</p>
         <ul>

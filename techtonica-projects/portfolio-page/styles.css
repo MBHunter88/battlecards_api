@@ -1,0 +1,87 @@
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem 0;
+    margin-left: 10px;
+}
+
+
+header {
+        text-align: center;
+        padding: 2rem 0;
+        background: #f4f4f4;
+        border-bottom: 2px solid #ddd;
+        background-image: url('https://www.avanade.com/-/media/images/blogs/tech-and-specs/intelligent-code-creation.jpg?vs=2&w=1120&la=en&hash=5A170B62CEB6A111765A47F56F780DC9');
+        background-size: cover;
+        background-position: center;
+    }
+
+.main-img {
+    border-radius: 8gpx;
+}    
+
+/* Override Bootstrap's default navbar color */
+.navbar {
+    background-color: rgb(255, 183, 56) !important;
+}
+
+
+article {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+
+.col-md-6 {
+    padding: 1rem;
+}
+
+
+#contact {
+    background: #f9f9f9;
+    padding: 2rem 0;
+}
+
+
+
+article {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+button {
+    background-color: rgb(56, 112, 255);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Override a CSS rule */
+h1 {
+    color: red; /* This will be overridden */
+}
+header h1 {
+    color: rgb(255, 183, 56); /* Override color */
+    background-color: white;
+    width: auto;
+}
+
+
+address {
+    display: block;
+    font-style: normal;
+    margin-bottom: 1rem;
+}
+
