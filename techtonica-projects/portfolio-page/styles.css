@@ -16,6 +16,7 @@ header {
         background-image: url('https://www.avanade.com/-/media/images/blogs/tech-and-specs/intelligent-code-creation.jpg?vs=2&w=1120&la=en&hash=5A170B62CEB6A111765A47F56F780DC9');
         background-size: cover;
         background-position: center;
+        margin-bottom: 10px;
     }
 
 .main-img {
@@ -78,6 +79,11 @@ header h1 {
     width: auto;
 }
 
+.artwork-title {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
 
 address {
     display: block;
@@ -85,3 +91,21 @@ address {
     margin-bottom: 1rem;
 }
 
+.gallery-item {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.gallery-item img { 
+    width: 100%;
+    height: 150px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
