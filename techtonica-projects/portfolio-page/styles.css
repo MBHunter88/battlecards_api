@@ -56,9 +56,9 @@ article {
 
 
 button {
-    background-color: rgb(56, 112, 255);
-    border: none;
-    color: white;
+    background-color: rgba(254,193,7,255) !important;
+    border: none !important;
+    color: rgba(4,20,43,255) !important;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -88,14 +88,60 @@ header h1 {
 
 #about {
    /* border: 1px solid rgb(221, 11, 82);*/
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
     font-size: 23px;
     padding: 1rem;
     margin: 1rem 0;
-    background:  white;;
-    color: black; 
+    background: rgba(4,20,43,255);
+    color: white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 } 
+
+ #about-toggle {
+    display: flex;
+    max-width: 50%;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 10px;
+    padding: 2rem 0;
+} 
+
+.about-summary {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size:26px;
+    margin: 0;
+    padding: 10px;
+    width: 100%; /* Ensure the summary takes up the full width */
+    box-sizing: border-box;
+}
+
+.about-summary img {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+
+.about-summary img, .about-summary p {
+    cursor: pointer;
+    text-align: auto;
+    margin: 0;
+    padding: 10px;
+}
+
+#collapse-button {
+    display: block;
+    margin: 10px auto;
+}
 
 .custom-padding {
     padding-left: 1.5em !important;  /* Override Bootstrap padding */
@@ -109,11 +155,12 @@ header h1 {
 #contact{
     max-width:800px;
     border: 1px solid #ddd;
-    color: black;
-    background: white;
+    color: white;
+    background: #04142b;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 2rem 0;
+    margin: 1rem 0 !important;
 }
 
 input[type="text"], input[type="email"] {
@@ -157,4 +204,24 @@ address {
 .mx-3 {
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem; /* Optional: adds space between the sections */
+}
+
+#about, #contact {
+    flex: 1;
+    max-width: 50%; /* Adjust based on the desired width */
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: rgba(254,193,7,255);
 }

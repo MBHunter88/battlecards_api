@@ -35,14 +35,56 @@
     </header>
     
     <main class="mx-3">
-        <h2>About Me</h2>
+      <div class="flex-container">
         <section id="about">
-            
+            <div class="about-summary" id="about-toggle" style="cursor:pointer;">
+                <img src="images/blackFairiesMatter.JPG" alt="Summary Image">
+                <p>Click here to learn more about me!</p>
+            </div>
+            <div class="about-details" id="about-details" style="display: none;">
+                <h2>About Me</h2>
             <p>Hello! I'm Michelle, a passionate developer with a strong background in web development and design. I have a deep love for coding and enjoy bringing creative ideas to life through my work. My journey into the world of technology began with a fascination for how things work, leading me to pursue a career in this ever-evolving field.</p>
     <p>With experience in HTML, CSS, JavaScript, and various frameworks, I specialize in creating dynamic and responsive web applications. I am currently enhancing my skills through a professional development program, focusing on the latest trends and best practices in web development.</p>
     <p>In addition to my technical skills, I have a background as a postpartum doula, where I developed strong communication and organizational skills. This unique combination of experiences allows me to approach problems with empathy and creativity, ensuring that the solutions I build are not only functional but also user-friendly.</p>
     <p>Outside of coding, I enjoy spending time with my family, exploring new technologies, and contributing to open-source projects. I am always eager to learn and grow, and I am excited to bring my skills and passion to new challenges and opportunities.</p>
-        </section>
+    <button id="collapse-button" class="btn btn-secondary">Collapse</button>       
+</div>
+</section>
+
+<footer id="contact" class="mx-3 custom-padding">
+    <div class="footer-text">
+    <h2>Contact Me</h2>
+    
+    <p>You can find me on:</p>
+</div>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/michelle-bedfordhunter" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/MBHunter88" target="_blank">GitHub</a></li>
+        <!-- Add other social media links -->
+    </ul>
+    <address>
+        <div class="footer-text">
+        <p>Email: <a href="mailto:your-email@example.com">Michelle@example.com</a></p>
+    </div>
+    </address>
+
+    <form action="your-form-processing-url" method="post">
+        <div class="form-group">
+            <label for="name">Name (required):</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email (required):</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</footer>
+
+</div> 
+    
 
         <section id="projects">
             <h2>Projects</h2>
@@ -139,40 +181,11 @@
        
     </main>
     
-    <footer id="contact" class="mx-3 custom-padding">
-        <div class="footer-text">
-        <h2>Contact Me</h2>
-        
-        <p>You can find me on:</p>
-    </div>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/michelle-bedfordhunter" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/MBHunter88" target="_blank">GitHub</a></li>
-            <!-- Add other social media links -->
-        </ul>
-        <address>
-            <div class="footer-text">
-            <p>Email: <a href="mailto:your-email@example.com">Michelle@example.com</a></p>
-        </div>
-        </address>
-
-        <form action="your-form-processing-url" method="post">
-            <div class="form-group">
-                <label for="name">Name (required):</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email (required):</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
