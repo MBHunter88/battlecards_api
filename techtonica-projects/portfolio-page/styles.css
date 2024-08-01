@@ -1,38 +1,50 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #010101;
     line-height: 1.6;
-    padding: 2rem 0;
-    margin-left: 10px;
+    background-color: rgb(233, 237, 252);
+    margin: 0;
+    padding: 0;
 }
 
 
 header {
         text-align: center;
         padding: 2rem 0;
-        background: #f4f4f4;
-        border-bottom: 2px solid #ddd;
-        background-image: url('https://www.avanade.com/-/media/images/blogs/tech-and-specs/intelligent-code-creation.jpg?vs=2&w=1120&la=en&hash=5A170B62CEB6A111765A47F56F780DC9');
+    background: #f4f4f4;
+    
+        background-image: url('images/pexels-markusspiske-2004161.jpg');
         background-size: cover;
         background-position: center;
         margin-bottom: 10px;
     }
 
 .main-img {
-    border-radius: 8gpx;
+    border-radius: 8px;
+    width: 150px;
+    height: auto;
 }    
 
 /* Override Bootstrap's default navbar color */
 .navbar {
-    background-color: rgb(255, 183, 56) !important;
+    background-color: #FFB738 !important;
+    
 }
 
+.navbar {
+    color: white;
+    background-color: white !important;
+}
 
 article {
-    border: 1px solid #ddd;
+    
     padding: 1rem;
     margin: 1rem 0;
+    background: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 
@@ -41,18 +53,6 @@ article {
 }
 
 
-#contact {
-    background: #f9f9f9;
-    padding: 2rem 0;
-}
-
-
-
-article {
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
 
 
 button {
@@ -64,25 +64,69 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #FFB738;
+}
 
 .form-group {
     margin-bottom: 1rem;
+    margin-left: 0.5em;
 }
 
 /* Override a CSS rule */
 h1 {
     color: red; /* This will be overridden */
 }
+
 header h1 {
-    color: rgb(255, 183, 56); /* Override color */
-    background-color: white;
-    width: auto;
+    color: rgba(254,193,7,255); /* Override color */
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+#about {
+   /* border: 1px solid rgb(221, 11, 82);*/
+    font-size: 23px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background:  white;;
+    color: black; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+} 
+
+.custom-padding {
+    padding-left: 1.5em !important;  /* Override Bootstrap padding */
+    padding-right: 1.5em !important; /* Override Bootstrap padding */
+}
+
+.footer-text {
+    margin-left: 0.5em;
+}
+
+#contact{
+    max-width:800px;
+    border: 1px solid #ddd;
+    color: black;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2rem 0;
+}
+
+input[type="text"], input[type="email"] {
+max-width: 600px;
 }
 
 .artwork-title {
     padding: 5px;
     margin-left: 5px;
     margin-right: 10px;
+    color: #333;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 address {
@@ -108,4 +152,9 @@ address {
 
 .gallery-item img:hover {
     transform: scale(1.1);
+}
+
+.mx-3 {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
