@@ -25,7 +25,7 @@ header {
     width: 250px;
     height: auto;
     object-fit: cover;
-    border: 7px solid rgb(191, 197, 209);
+    border: 7px solid rgba(4,20,43,255);
     box-shadow: 0 4px 8px (0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     vertical-align: middle;
@@ -149,9 +149,9 @@ header h1 {
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a text shadow */
     padding: 1rem;
-    padding-left:4.5px;
+    
     border-radius: 5px;
-    border-left-style: none;
+    
     display: inline-block;
     transition: transform 0.3s ease; /* Add a smooth transition */
     vertical-align: middle;
