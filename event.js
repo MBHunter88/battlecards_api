@@ -13,7 +13,7 @@ const eventObj3 = new Event("Comicon 24", "Destination for heroes and villians a
 //create empty event array and push events into array
 const eventArr = new Array();
 eventArr.push(eventObj1, eventObj2, eventObj3); 
-//console.log(eventArr);
+console.log(eventArr);
 
 
 //DOMContentLoaded event handler. This is to prevent any javascript code from running
@@ -25,3 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelector("#event").innerHTML = html;
 })
+
+class TicketType {
+    constructor(type, cost) {
+        this.type = type;
+        this.cost = cost;
+    }
+  addAvailableTickets(type, cost){
+    return availableTickets();
+  }
+}
+
+// //add ticket types
+eventObj1.addAvailableTickets("human", 299);
+eventObj1.addAvailableTickets("monster", 99);
+// console.log(addAvailableTickets(eventObj1))
