@@ -5,6 +5,18 @@ class Event {
         this.description = description;
         this.availableTickets = [];
     }
+    addAvailableTickets(type, cost){
+       const ticket = new TicketType(type, cost);
+       this.availableTickets.push(ticket)
+      }
+      allTickets(){
+        return "All tickets: " + this.availableTickets.map((ticket, index) => `${index + 1}. ${ticket.type} ($${ticket.cost})`).join(" ")
+      }
+
+      searchTickets(lower, higher){
+        
+
+      }
 }
  //create object using event class
 const eventObj1 = new Event("Ghoul Grammy" , "An monsterous music event");
@@ -21,7 +33,7 @@ console.log(eventArr);
 document.addEventListener("DOMContentLoaded", () => {
     let html = ''; 
     eventArr.forEach((item) => {
-        html += `<li>${item.name} -  ${item.description}`;
+        html += `<li>${item.name} - ${item.description} ${item.allTickets()}</li>`;
     });
     document.querySelector("#event").innerHTML = html;
 })
@@ -31,12 +43,14 @@ class TicketType {
         this.type = type;
         this.cost = cost;
     }
-  addAvailableTickets(type, cost){
-    return availableTickets();
-  }
+
 }
 
 // //add ticket types
 eventObj1.addAvailableTickets("human", 299);
 eventObj1.addAvailableTickets("monster", 99);
+eventObj2.addAvailableTickets("General Admission", 50);
+eventObj2.addAvailableTickets("Floor Seats", 150);
+eventObj3.addAvailableTickets("Meet and Greet", 350);
+eventObj3.addAvailableTickets("General", 50);
 // console.log(addAvailableTickets(eventObj1))
