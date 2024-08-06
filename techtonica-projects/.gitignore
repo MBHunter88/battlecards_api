@@ -1,0 +1,13 @@
+# Ignore all .log files
+*.log
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore all files in the tmp directory
+<<<<<<< HEAD
+tmp/
+=======
+tmp/
+
+>>>>>>> 07585cbc05368461d30b194d080c0925a7b1431e
