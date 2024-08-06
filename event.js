@@ -14,10 +14,15 @@ class Event {
       }
 
       searchTickets(lower, higher){
-        
+        const eligibleTickets = this.availableTickets.filter(ticket => ticket.cost >= lower && ticket.cost <= higher);
+        if (eligibleTickets.length === 0) {
+          return "No tickets available";
+        }
+        return "Eligible tickets: " + eligibleTickets.map((ticket, index) => `${index + 1}. ${ticket.type} ($${ticket.cost})`).join(" ");
+      }
 
       }
-}
+
  //create object using event class
 const eventObj1 = new Event("Ghoul Grammy" , "An monsterous music event");
 const eventObj2 = new Event("Beyonce", "A night with the legend herself");
@@ -31,9 +36,11 @@ console.log(eventArr);
 //DOMContentLoaded event handler. This is to prevent any javascript code from running
 //before the document is finished loading (is ready).
 document.addEventListener("DOMContentLoaded", () => {
+    let lower = 0;
+    let higher = 100;
     let html = ''; 
     eventArr.forEach((item) => {
-        html += `<li>${item.name} - ${item.description} ${item.allTickets()}</li>`;
+        html += `<li>${item.name} - ${item.description} - ${item.searchTickets(lower, higher)}</li>`;
     });
     document.querySelector("#event").innerHTML = html;
 })
