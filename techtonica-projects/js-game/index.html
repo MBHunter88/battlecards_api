@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin-Toss</title>
+    <title>Virtual Pet</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-    <div class="coin"></div>
-    <button>Toss</button>
-    <p id="result"></p>
-</div>
+    <div id="game">
+        <header>
+            <h1>Virtual Pet</h1>
+        </header>
+        <main>
+            <section id="stats">
+                <span class="stat">Happiness: <strong><span id="xpText">100</span></strong></span>
+                <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+            </section>
+            <section id="controls">
+                <button id="button1" aria-label="Feed your pet">Feed</button>
+                <button id="button2" aria-label="Play with your pet">Play</button>
+                <button id="button3" aria-label="Clean your pet">Clean</button>
+            </section>
+            <section id="petStats">
+                <span class="stat">Name: <strong><span id="petName"></span></strong></span>
+                <span class="stat">Happiness: <strong><span id="petHappiness"></span></strong></span>
+                <span class="stat">Health: <strong><span id="petHealth"></span></strong></span>
+            </section>
+            <section id="text">
+                <p>Welcome, select your pet!</p>
+                <img class="petImage" src="image.url" alt="Your pet">
+            </section>
+        </main>
+        <footer>
+            <p>© 2024 Virtual Pet Game</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

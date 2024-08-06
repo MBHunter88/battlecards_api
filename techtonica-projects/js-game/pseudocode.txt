@@ -1,0 +1,44 @@
+Game Name: Techtonmagotchi!
+
+Description: RPG game that is based on Tomagachi toy where user will
+take care of a pet.
+
+Objective: To keep pet alive and healthy. 
+
+Features: User selects pet. User must feed and 
+clean after pet to keep healthy and play with pet to keep happy. Pet can earn
+extra 'happiness' by getting treats.
+
+Rules:
+
+Styling:
+
+Components: Simple box that shows:
+-Stats
+-Image
+-Buttons
+    -feed
+    -play
+    -clean
+
+Logic: 
+Feeding and cleaning adds health; set time without a feed/clean subtracts health
+Feeding and cleaning can add a set number but the time without will select a random number to subtract the health
+Playing adds happiness; set time without playing subtracts happiness
+
+
+Step1: Set up HTML skeleton.
+Should include a container to hold game components.
+
+Step 2: Set up js file and variables for front facing components, should include option for pet and initial stats 
+
+Step 3:
+Implement logic to increase stats based on action of the button displayed 
+
+Step 4:
+Implement logic to decrease stats based on time intervals, intervals should run continuously
+
+Step 5: 
+Set boundaries for stats and conditions for losing game (pet runs aways or dies)
+
+Step 6: In-game display for user based on user action or inaction and current state of pet display
