@@ -1,110 +1,128 @@
-//initialize variables for pet name and  initial stats
-const petName = "";
-let petHealth = 70;
-let petHappiness = 70;
-let alertText = "";
-let gameOverText = "";
-//display initial stats
-function updateDisplay() {
-    const healthStat = document.getElementById("healthText");
-    const happinessStat = document.getElementById("happinessText");
-    const text = document.getElementById("text");
-    healthStat.innerHTML = petHealth;
-    happinessStat.innerText = petHappiness;
-    //update to include alerts for decreased stats
-    lowStatAlert();
+//make sure the entire DOM loads before executing code
+document.addEventListener('DOMContentLoaded', (event) => {
+    //initialize variable to show initial stats and global variables for updated display
+    const petName = "";
+    let petHealth = 70;
+    let petHappiness = 70;
+    let alertText = "";
+    let gameOverText = "";
 
-    //update to display text when game is over
-    gameOver();
-    // Combine alertText and gameOverText
-    let combinedText = alertText;
-    if (gameOverText !== "") {
-        combinedText += "<br>" + gameOverText; // Add a line break between messages
+    //update the display once conditions are met
+    function updateDisplay() {
+        const healthStat = document.getElementById("healthText");
+        const happinessStat = document.getElementById("happinessText");
+        const text = document.getElementById("text");
+        healthStat.innerHTML = petHealth;
+        happinessStat.innerText = petHappiness;
+
+        //call functions to update the innerText
+        lowStatAlert();
+        gameOver();
+        //make sure that both alowStatAlert and gameOver don't display at the same time
+        let combinedText = alertText;
+        if (gameOverText !== "") {
+            combinedText += "<br>" + gameOverText;
+        }
+
+        text.innerHTML = combinedText;
+        //update the image of pet as the stats change
+        updatePetImage();
+        //clear the time interval to decrease stat
+        clearStatDecreaseInterval();
     }
-
-    // Update the text element with the combined message
-    text.innerHTML = combinedText;
-
-    clearStatDecreaseInterval();
-}
-
-//implement actions to increase stats
-
-function increaseHealth() {
-    if (petHealth < 100 && petHealth != 0) { //boundary set to make sure stats are between 0 - 100 
-        petHealth += 3;
-        //update display
-        updateDisplay()
-    }
-}
-
-function increaseHappiness() {
-    if (petHappiness < 100 && petHappiness != 0) { //boundary set to make sure stats are between 0 - 100
-        petHappiness += 3;
-        updateDisplay();
-    }
-}
-
-function increaseBothbyCleaning() {
-    if(petHappiness < 100 && petHappiness != 0 || petHealth < 100 && petHealth != 0) {
-        petHappiness += 1;
-        petHealth += 1;
-        updateDisplay();
-    }
-}
-
-//call action functions on buttons
-document.getElementById("button1").onclick = increaseHealth;
-document.getElementById("button2").onclick = increaseHappiness;
-document.getElementById("button3").onclick = increaseBothbyCleaning; 
-
-updateDisplay();
-
-//set time intervals to decrease stats
-//first create function to detemine decrease
-function decreaseStats() {
-    if (petHappiness > 0) {
-        petHappiness -= 1
-    }
-    if (petHealth > 0) {
-        petHealth -= 2
-    }
-
-    updateDisplay()
-}
-//set the time interval of decrease
-let statDecreaseInterval = setInterval(decreaseStats, 500); //adjust as needed for presentation
-
-//set conditions for alerting user about poor health 
-
-function lowStatAlert() {
-    alertText = "";
-    if (gameOverText === "") {
-        if (petHappiness < 20 && petHappiness > 0) {
-            alertText = "Your pet is lonely! Click play to make them happy."
-
-        } else if (petHealth < 20 && petHealth > 0) {
-            alertText = "Your pet is not feeling well! Feed and clean up their space to make them feel better."
+    //increase health by clicking on "feed" button and update the display 
+    function increaseHealth() {
+        if (petHealth < 100 && petHealth != 0) {
+            petHealth += 3;
+            updateDisplay();
         }
     }
-}
-
-//clear the interval for stat decrease if one stat reaches 0
-
-function clearStatDecreaseInterval() {
-    if (petHealth == 0 || petHappiness == 0) {
-        clearInterval(statDecreaseInterval)
+    //increase happiness by clicking on "play" button and update the display 
+    function increaseHappiness() {
+        if (petHappiness < 100 && petHappiness != 0) {
+            petHappiness += 3;
+            updateDisplay();
+        }
     }
-}
+    //increase both stats by cliking on "clean" button and update display 
+    function increaseBothbyCleaning() {
+        if ((petHappiness < 100 && petHappiness != 0) || (petHealth < 100 && petHealth != 0)) {
+            petHappiness += 1;
+            petHealth += 1;
+            updateDisplay();
+        }
+    }
 
-// set conditions for losing
+    //add event listeners to corresponding buttons
+    document.getElementById("button1").onclick = increaseHealth;
+    document.getElementById("button2").onclick = increaseHappiness;
+    document.getElementById("button3").onclick = increaseBothbyCleaning;
 
-function gameOver() {
-    gameOverText = "";
-    if (petHappiness == 0) {
-        gameOverText = "Your pet has run away"
-    } else if (petHealth == 0) {
-        gameOverText = "Your pet has died of starvation "
-    } else
+    //call function 
+    updateDisplay();
+
+    //set condtion for decreasing stats and update display
+    function decreaseStats() {
+        if (petHappiness > 0) {
+            petHappiness -= 1;
+        }
+        if (petHealth > 0) {
+            petHealth -= 2;
+        }
+        updateDisplay();
+    }
+
+    //set interval for stat decrease
+    let statDecreaseInterval = setInterval(decreaseStats, 3000); //adjust for presentation purpose
+
+    //create alert when stats reach 20 
+    function lowStatAlert() {
+        //reset the alertText
+        alertText = "";
+        //make sure there is no gameOver alert displaying 
+        if (gameOverText === "") {
+            if (petHappiness < 20 && petHappiness > 0) {
+                alertText = "Your pet is lonely! Click play to make them happy.";
+            } else if (petHealth < 20 && petHealth > 0) {
+                alertText = "Your pet is not feeling well! Feed and clean up their space to make them feel better.";
+            }
+        }
+    }
+
+    //clear the time interval once either stat reach 0
+    function clearStatDecreaseInterval() {
+        if (petHealth == 0 || petHappiness == 0) {
+            clearInterval(statDecreaseInterval);
+        }
+    }
+
+    //alert once stats reach 0 
+    function gameOver() {
+        //reset text
         gameOverText = "";
-}
+        if (petHappiness == 0) {
+            gameOverText = "Your pet has run away";
+        } else if (petHealth == 0) {
+            gameOverText = "Your pet has died of starvation";
+        } else {
+            gameOverText = "";
+        }
+    }
+
+    //update image based on stats using sprite sheet 
+    // function updatePetImage() {
+    //     const petImage = document.getElementById("petImage");
+    //     console.log(petImage); // Debugging: Log the petImage element
+    //     if (petImage) { // Check if petImage is found
+    //         if (petHealth > 80 && petHappiness > 80) {
+    //             petImage.className = "happy";
+    //         } else if (petHealth < 50 || petHappiness < 50) {
+    //             petImage.className = "sad";
+    //         } else {
+    //             petImage.className = "neutral";
+    //         }
+    //     } else {
+    //         console.error("petImage element not found");
+    //     }
+    // }
+});
