@@ -51,3 +51,10 @@ create function to show alert once stats reach 0
 
 Step 6: In-game display for user based on user action or inaction and current state of pet display
 call the above functions to be displayed in function for updated display
+
+Things to do:
+Add images
+create user input to name pet
+make sure boundaries are working and display is being displayed correctly
+add additional pet options 
+update Styling

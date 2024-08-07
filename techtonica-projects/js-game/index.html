@@ -13,6 +13,7 @@
         </header>
         <main>
             <section id="stats">
+                <span class="stat">Name: <strong><span id="petName"></span></strong></span>
                 <span class="stat">Happiness: <strong><span id="happinessText"></span></strong></span>
                 <span class="stat">Health: <strong><span id="healthText"></span></strong></span>
             </section>
@@ -21,14 +22,13 @@
                 <button id="button2" aria-label="Play with your pet">Play</button>
                 <button id="button3" aria-label="Clean your pet">Clean</button>
             </section>
-            <section id="petStats">
-                <span class="stat">Name: <strong><span id="petName"></span></strong></span>
-                <span class="stat">Happiness: <strong><span id="petHappiness"></span></strong></span>
-                <span class="stat">Health: <strong><span id="petHealth"></span></strong></span>
-            </section>
             <section id="text">
-                <p>Welcome, select your pet!</p>
-                <!-- <div id="petImage" class="happy">Image Here</div> -->
+                <div id="petImage" class="happy">Image Here</div>
+                <p>Welcome, name your pet!</p>
+            </section>
+            <section id="nameInput">
+                <input type="text" id="petNameInput" placeholder="Enter pet name">
+                <button id="submitName">Name your pet</button>
             </section>
         </main>
         <footer>

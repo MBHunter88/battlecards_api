@@ -1,20 +1,37 @@
 //make sure the entire DOM loads before executing code
 document.addEventListener('DOMContentLoaded', (event) => {
     //initialize variable to show initial stats and global variables for updated display
-    const petName = "";
     let petHealth = 70;
     let petHappiness = 70;
     let alertText = "";
     let gameOverText = "";
+    let petName = "";
+    
+
+    //intialize variables for user input to name pet
+    const petNameInput = document.getElementById('petNameInput');
+    const submitNameButton = document.getElementById('submitName');
+    const petNameDisplay = document.getElementById('petName');
+    const nameInputSection = document.getElementById('nameInput');
+    //add event listener to submit name 
+    submitNameButton.addEventListener('click', () => {
+        const petName = petNameInput.value.trim();
+        
+        if (petName) {
+            petNameDisplay.textContent = petName;
+            petNameInput.value = ''; // Clear the input field
+            nameInputSection.style.display = 'none'; //will hide display once name is submitted
+        }
+    });
 
     //update the display once conditions are met
     function updateDisplay() {
         const healthStat = document.getElementById("healthText");
         const happinessStat = document.getElementById("happinessText");
-        const text = document.getElementById("text");
+        const displayText = document.getElementById("text");
         healthStat.innerHTML = petHealth;
         happinessStat.innerText = petHappiness;
-
+        petNameDisplay.innerText = petName;
         //call functions to update the innerText
         lowStatAlert();
         gameOver();
@@ -24,9 +41,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             combinedText += "<br>" + gameOverText;
         }
 
-        text.innerHTML = combinedText;
+        displayText.innerHTML = combinedText;
         //update the image of pet as the stats change
-        updatePetImage();
+        //updatePetImage();
         //clear the time interval to decrease stat
         clearStatDecreaseInterval();
     }
@@ -73,7 +90,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //set interval for stat decrease
-    let statDecreaseInterval = setInterval(decreaseStats, 3000); //adjust for presentation purpose
+    let statDecreaseInterval = setInterval(decreaseStats, 80000); //adjust for presentation purpose
 
     //create alert when stats reach 20 
     function lowStatAlert() {

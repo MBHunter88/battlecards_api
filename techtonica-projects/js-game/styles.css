@@ -44,7 +44,7 @@ body {
     border: 3px solid #feac32;
   }
 
-  /* #petImage {
+  #petImage {
     width: 256px; 
     height: 256px; 
     background: url('images/164811-OVK22P-15.jpg') no-repeat;
@@ -62,8 +62,9 @@ body {
 
 .neutral {
     background-position: -512px 0;
-} */
+}
 
-
-
+#nameInput {
+  margin-top: 20px;
+}
 
