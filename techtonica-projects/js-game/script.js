@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let alertText = "";
     let gameOverText = "";
     let petName = "";
-    
+    let currentAnimation = "neutral";
 
     //intialize variables for user input to name pet
     const petNameInput = document.getElementById('petNameInput');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         displayText.innerHTML = combinedText;
         //update the image of pet as the stats change
-        //updatePetImage();
+        updateAnimation();
         //clear the time interval to decrease stat
         clearStatDecreaseInterval();
     }
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("button3").onclick = increaseBothbyCleaning;
 
     //call function 
-    updateDisplay();
+    // updateDisplay();
 
     //set condtion for decreasing stats and update display
     function decreaseStats() {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //set interval for stat decrease
-    let statDecreaseInterval = setInterval(decreaseStats, 80000); //adjust for presentation purpose
+    let statDecreaseInterval = setInterval(decreaseStats, 800); //adjust for presentation purpose
 
     //create alert when stats reach 20 
     function lowStatAlert() {
@@ -126,22 +126,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-   // update image based on stats using sprite sheet 
-    // function updatePetImage() {
-    //     const petImage = document.getElementById("petCanvas");
-    //     console.log(petImage); // Debugging: Log the petImage element
-    //     if (petImage) { // Check if petImage is found
-    //         if (petHealth > 80 && petHappiness > 80) {
-    //             petImage.className = "happy";
-    //         } else if (petHealth < 50 || petHappiness < 50) {
-    //             petImage.className = "sad";
-    //         } else {
-    //             petImage.className = "neutral";
-    //         }
-    //     } else {
-    //         console.error("petImage element not found");
-    //     }
-    // }
+   
  // Sprite animation code
  const canvas = document.getElementById('petCanvas');
  const ctx = canvas.getContext('2d');
@@ -152,23 +137,61 @@ document.addEventListener('DOMContentLoaded', (event) => {
  const FRAME_HEIGHT = 512;
  const FRAME_COUNT = 4;
 
+ //define frame sets for different states
+ const ANIMATIONS = {
+    happy: { x: 0, y: 0 },
+    neutral: { x: 0, y: 1 },
+    sick: { x: 1, y: 0 },
+    sad: { x: 1, y: 1 }
+};
+
+
+
+
  let currentFrame = 0;
- const animationSpeed = 500;
+ let animationSpeed = 500;
+ let lastUpdateTime = Date.now();
 
  function drawFrame(frameX, frameY, canvasX, canvasY) {
-     ctx.drawImage(spriteSheet,
-         frameX * FRAME_WIDTH, frameY * FRAME_HEIGHT, // Source x, y
-         FRAME_WIDTH, FRAME_HEIGHT, // Source width, height
-         canvasX, canvasY, // Destination x, y
-         FRAME_WIDTH, FRAME_HEIGHT); // Destination width, height
- }
+    ctx.drawImage(spriteSheet,
+        frameX * FRAME_WIDTH, frameY * FRAME_HEIGHT, // Source x, y
+        FRAME_WIDTH, FRAME_HEIGHT, // Source width, height
+        canvasX, canvasY, // Destination x, y
+        FRAME_WIDTH, FRAME_HEIGHT); // Destination width, height
+}
 
- function animate() {
-     ctx.clearRect(0, 0, canvas.width, canvas.height);
-     drawFrame(currentFrame % 2, Math.floor(currentFrame / 2), 0, 0);
-     currentFrame = (currentFrame + 1) % FRAME_COUNT;
-     setTimeout(animate, animationSpeed);
- }
+
+function animate() {
+    const now = Date.now();
+    const deltaTime = now - lastUpdateTime;
+
+    if (deltaTime >= animationSpeed) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const { x, y } = ANIMATIONS[currentAnimation];
+        drawFrame(x, y, 0, 0);
+        lastUpdateTime = now;
+    }
+
+    requestAnimationFrame(animate);
+}
+
+
+ function updateAnimation() {
+    if (petHealth < 50 || petHappiness < 50) {
+        currentAnimation = 'sad';
+        animationSpeed = 800;
+    } else if (petHealth < 20 || petHappiness < 20) {
+        currentAnimation = 'sick';
+        animationSpeed = 1000;
+    } else if (petHealth > 80 && petHappiness > 80) {
+        currentAnimation = 'happy';
+        animationSpeed = 500;
+    } else {
+        currentAnimation = 'neutral';
+        animationSpeed = 600;
+    }
+    console.log(`Current animation: ${currentAnimation}, Animation speed: ${animationSpeed}`);
+}
 
  spriteSheet.onload = function() {
      console.log("Sprite sheet loaded successfully");
@@ -180,5 +203,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
  spriteSheet.onerror = function() {
      console.error("Failed to load sprite sheet");
  };
+
+ 
+
+ // Function to simulate stats update
+//  function updateStats() {
+//      // Example logic to update stats
+//      petHealth -= 10;
+//      petHappiness -= 5;
+//      updateAnimation();
+//      updateDisplay();
+//  }
+
+//  // Simulate stats update every 3 seconds
+//  setInterval(updateStats, 3000);
 
 });
