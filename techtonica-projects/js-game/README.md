@@ -9,6 +9,7 @@ Help this pet thrive! This project showcases my work, skills, and experience as 
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+- [Demo](#demo)
 - [Contact](#contact)
 
 ## Introduction
@@ -49,6 +50,9 @@ To get a local copy up and running, follow these simple steps:
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Demo
+![Techtonmagotchi Screenshot](images/Screenshot.png)
 
 ## Contact
 Michelle B. Hunter - [Your Email](chellehunt88@gmail.com) - [LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
