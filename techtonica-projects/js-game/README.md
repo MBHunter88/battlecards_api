@@ -55,7 +55,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ![Techtonmagotchi Screenshot](images/Screenshot.png)
 
 ## Contact
-Michelle B. Hunter - [Your Email](chellehunt88@gmail.com) - [LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
+Michelle B. Hunter - [My Email](chellehunt88@gmail.com) - [My LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
 
 Project Link: [https://github.com/MBHunter88/techtonica-assignments](https://github.com/MBHunter88/techtonica-assignments)
 
