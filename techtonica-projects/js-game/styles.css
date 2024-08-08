@@ -1,6 +1,12 @@
 body {
     background-color: #1a1a4f;
   }
+
+  h1 {
+    text-align: center;
+    color: red;
+  }
+  
   
   #text {
     background-color: #0a0a23;
@@ -10,7 +16,7 @@ body {
   
   #game {
     max-width: 500px;
-    max-height: 400px;
+    max-height: 900px;
     background-color: #b6eef0;
     color: #ffffff;
     margin: 30px auto 0px;
@@ -25,7 +31,7 @@ body {
   }
   
   #petStats {
-    display: none;
+    
     border: 1px solid #0a0a23;
     padding: 5px;
     color: #ffffff;
@@ -44,27 +50,14 @@ body {
     border: 3px solid #feac32;
   }
 
-  #petImage {
-    width: 256px; 
-    height: 256px; 
-    background: url('images/164811-OVK22P-15.jpg') no-repeat;
-    display: inline-block;
-    background-color: red; 
+  #petCanvas {
+    display: block; /* Make sure the canvas is a block element */
+    margin: 0 auto; /* Center the canvas */
+    width: 256px; /* Set your desired canvas width */
+    height: 256px; /* Set your desired canvas height */
 }
-
-.happy {
-    background-position: 0 0;
-}
-
-.sad {
-    background-position: -256px 0;
-}
-
-.neutral {
-    background-position: -512px 0;
-}
-
+ 
 #nameInput {
+  align-items: center;
   margin-top: 20px;
 }
-

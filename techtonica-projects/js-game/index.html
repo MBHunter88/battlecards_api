@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Pet</title>
+    <title>Techtonmagotchi!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="game">
         <header>
-            <h1>Virtual Pet</h1>
+            <h1>Techtonmagotchi!</h1>
         </header>
         <main>
             <section id="stats">
@@ -22,9 +22,10 @@
                 <button id="button2" aria-label="Play with your pet">Play</button>
                 <button id="button3" aria-label="Clean your pet">Clean</button>
             </section>
-            <section id="text">
-                <div id="petImage" class="happy">Image Here</div>
-                <p>Welcome, name your pet!</p>
+            <section id="displayText">
+                <p id="initialText" style="color:black">Welcome, first name your pet!</p>
+                <p id="text"></p>
+                <canvas id="petCanvas"></canvas>
             </section>
             <section id="nameInput">
                 <input type="text" id="petNameInput" placeholder="Enter pet name">

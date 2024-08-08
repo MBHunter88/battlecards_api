@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    //update image based on stats using sprite sheet 
+   // update image based on stats using sprite sheet 
     // function updatePetImage() {
-    //     const petImage = document.getElementById("petImage");
+    //     const petImage = document.getElementById("petCanvas");
     //     console.log(petImage); // Debugging: Log the petImage element
     //     if (petImage) { // Check if petImage is found
     //         if (petHealth > 80 && petHappiness > 80) {
@@ -142,4 +142,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //         console.error("petImage element not found");
     //     }
     // }
+ // Sprite animation code
+ const canvas = document.getElementById('petCanvas');
+ const ctx = canvas.getContext('2d');
+ const spriteSheet = new Image();
+ spriteSheet.src = 'images/ai-spritesheet copy1.png';
+
+ const FRAME_WIDTH = 512;
+ const FRAME_HEIGHT = 512;
+ const FRAME_COUNT = 4;
+
+ let currentFrame = 0;
+ const animationSpeed = 500;
+
+ function drawFrame(frameX, frameY, canvasX, canvasY) {
+     ctx.drawImage(spriteSheet,
+         frameX * FRAME_WIDTH, frameY * FRAME_HEIGHT, // Source x, y
+         FRAME_WIDTH, FRAME_HEIGHT, // Source width, height
+         canvasX, canvasY, // Destination x, y
+         FRAME_WIDTH, FRAME_HEIGHT); // Destination width, height
+ }
+
+ function animate() {
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+     drawFrame(currentFrame % 2, Math.floor(currentFrame / 2), 0, 0);
+     currentFrame = (currentFrame + 1) % FRAME_COUNT;
+     setTimeout(animate, animationSpeed);
+ }
+
+ spriteSheet.onload = function() {
+     console.log("Sprite sheet loaded successfully");
+     canvas.width = FRAME_WIDTH;
+     canvas.height = FRAME_HEIGHT;
+     animate();
+ };
+
+ spriteSheet.onerror = function() {
+     console.error("Failed to load sprite sheet");
+ };
+
 });
