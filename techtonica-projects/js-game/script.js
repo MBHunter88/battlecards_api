@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //update the image of pet as the stats change
         updateAnimation();
         //clear the time interval to decrease stat
-        clearStatDecreaseInterval();
+        clearHappinessDecreaseInterval();
+        clearHealthDecreaseInterval();
     }
     //increase health by clicking on "feed" button and update the display 
     function increaseHealth() {
@@ -79,18 +80,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // updateDisplay();
 
     //set condtion for decreasing stats and update display
-    function decreaseStats() {
+    function decreaseHealthStats() {
         if (petHappiness > 0) {
             petHappiness -= 1;
         }
+        updateDisplay
+    }
+    function decreaseHappinessStats() {
         if (petHealth > 0) {
-            petHealth -= 2;
+            petHealth -= 1;
         }
         updateDisplay();
     }
 
     //set interval for stat decrease
-    let statDecreaseInterval = setInterval(decreaseStats, 800); //adjust for presentation purpose
+    let healthDecreaseInterval = setInterval(decreaseHealthStats, 800); //adjust for presentation 
+    let happinessDecreaseInterval = setInterval(decreaseHappinessStats, 1000); //adjust for presentation 
 
     //create alert when stats reach 20 
     function lowStatAlert() {
@@ -107,9 +112,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //clear the time interval once either stat reach 0
-    function clearStatDecreaseInterval() {
+    function clearHealthDecreaseInterval() {
         if (petHealth == 0 || petHappiness == 0) {
-            clearInterval(statDecreaseInterval);
+            clearInterval(healthDecreaseInterval);
+        }
+    }
+    function clearHappinessDecreaseInterval() {
+        if (petHealth == 0 || petHappiness == 0) {
+            clearInterval(happinessDecreaseInterval);
         }
     }
 
