@@ -1,36 +1,65 @@
-Techtonmagotchi - Virttual Pet Game
+# Techtonmagotchi - Virtual Pet Game
 
 Help this pet thrive! This project showcases my work, skills, and experience as a developer.
 
-Table of Contents
-Introduction
-Features
-Technologies
-Installation
-Usage
-License
-Contact
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contact](#contact)
 
-Introduction
-This javascript game is designed to provide an overview of my skills and projects. 
+## Introduction
+Welcome to Techtonmagotchi, a fun and interactive virtual pet game designed to demonstrate my web development skills. This project highlights my ability to create dynamic, engaging user experiences using modern web technologies. Watch as your virtual pet responds to your care, and strive to keep it happy and healthy.
 
+## Features
+- Interactive virtual pet that responds to user actions
+- Dynamic updates to pet's health and happiness stats
+- Customizable pet names
+- Animated pet sprites
+- Responsive design for various screen sizes
+- Visual and text alerts for pet status
 
-Features
+## Technologies
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Git for version control
 
-
-Installation
+## Installation
 To get a local copy up and running, follow these simple steps:
 
-Clone the repository:
-git clone git@github.com:MBHunter88/-techtonica-assignments.git
+1. Clone the repository:
+    ```sh
+    git clone git@github.com:MBHunter88/techtonica-assignments.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd techtonica-assignments
+    ```
+3. Open `index.html` in your favorite web browser.
 
+## Usage
+1. Open the game in your web browser.
+2. Name your pet using the input field and submit the name.
+3. Interact with your pet using the feed, play, and clean buttons.
+4. Monitor your pet's health and happiness stats and respond to alerts to keep your pet happy and healthy.
 
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Contact: 
+## Contact
+Michelle B. Hunter - [Your Email](chellehunt88@gmail.com) - [LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
 
-Explanation
-Introduction: Provides a brief overview of the project and its purpose.
-Features: Lists the main features of the portfolio website.
-Technologies: Lists the technologies used in the project.
-Installation: Provides step-by-step instructions to clone and navigate the project.
-Contact: Provides contact information.
+Project Link: [https://github.com/MBHunter88/techtonica-assignments](https://github.com/MBHunter88/techtonica-assignments)
+
+## Explanation
+- **Introduction**: Provides a brief overview of the project and its purpose.
+- **Features**: Lists the main features of the virtual pet game.
+- **Technologies**: Lists the technologies used in the project.
+- **Installation**: Provides step-by-step instructions to clone and navigate the project.
+- **Usage**: Explains how to interact with the virtual pet game.
+- **License**: Details the licensing information for the project.
+- **Contact**: Provides contact information for further queries or collaboration.
