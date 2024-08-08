@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const nameInputSection = document.getElementById('nameInput');
     //add event listener to submit name 
     submitNameButton.addEventListener('click', () => {
-        const petName = petNameInput.value.trim();
+         petName = petNameInput.value.trim();
         
         if (petName) {
             petNameDisplay.textContent = petName;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const healthStat = document.getElementById("healthText");
         const happinessStat = document.getElementById("happinessText");
         const displayText = document.getElementById("text");
-        healthStat.innerHTML = petHealth;
+        healthStat.innerText = petHealth;
         happinessStat.innerText = petHappiness;
         petNameDisplay.innerText = petName;
         //call functions to update the innerText
