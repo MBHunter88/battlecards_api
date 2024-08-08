@@ -36,9 +36,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         lowStatAlert();
         gameOver();
         //make sure that both alowStatAlert and gameOver don't display at the same time
-        let combinedText = alertText;
+        let combinedText = "";
         if (gameOverText !== "") {
-            combinedText += "<br>" + gameOverText;
+            combinedText = gameOverText;
+        } else {
+            combinedText = alertText;
         }
 
         displayText.innerHTML = combinedText;
