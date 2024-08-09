@@ -7,5 +7,6 @@ node_modules/
 # Ignore all files in the tmp directory
 tmp/
 
-# Ignore .DS_Store
+# Ignore .DS files
+.DS_Store
 .DS_Store
