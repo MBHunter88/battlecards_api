@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const petNameInput = document.getElementById('petNameInput');
     const submitNameButton = document.getElementById('submitName');
     const petNameDisplay = document.getElementById('petName');
-    const nameInputSection = document.getElementById('nameInput');
+    const nameInputSection = document.getElementById('nameInput');   
     //add event listener to submit name 
     submitNameButton.addEventListener('click', () => {
-         petName = petNameInput.value.trim();
-        
+         petName = petNameInput.value.trim();   
+         
         if (petName) {
             petNameDisplay.textContent = petName;
             petNameInput.value = ''; // Clear the input field
