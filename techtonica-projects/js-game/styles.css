@@ -130,3 +130,7 @@ body {
   font-size: 1em;
   border-radius: 20%;
 }
+
+#healthText, #happinessText {
+  font-family: 'Courier New', Courier, monospace;
+}

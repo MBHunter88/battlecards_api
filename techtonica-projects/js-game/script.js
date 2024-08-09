@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
    
- // Sprite animation code
+ // Sprite animation code - AI generated and modified to run with original code
  const canvas = document.getElementById('petCanvas');
  const ctx = canvas.getContext('2d');
  const spriteSheet = new Image();
