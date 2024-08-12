@@ -34,6 +34,12 @@ h1:hover {
   .left, .right {
     margin-top: 30px;
 }
+<<<<<<< HEAD
+
+a:hover {
+    color: darkorange;
+}
+=======
 
 
 .checked {
@@ -152,3 +158,4 @@ body.dark-mode .btn {
       padding: 20px;
   }
 }
+>>>>>>> c5225074f712c32f08f410e3877f873f182c219d
