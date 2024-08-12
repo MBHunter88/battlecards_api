@@ -8,7 +8,6 @@ Help this pet thrive! This project showcases my work, skills, and experience as 
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Demo](#demo)
 - [Contact](#contact)
 
@@ -19,8 +18,7 @@ Welcome to Techtonmagotchi, a fun and interactive virtual pet game designed to d
 - Interactive virtual pet that responds to user actions
 - Dynamic updates to pet's health and happiness stats
 - Customizable pet names
-- Animated pet sprites
-- Responsive design for various screen sizes
+- Animations
 - Visual and text alerts for pet status
 
 ## Technologies
@@ -48,14 +46,12 @@ To get a local copy up and running, follow these simple steps:
 3. Interact with your pet using the feed, play, and clean buttons.
 4. Monitor your pet's health and happiness stats and respond to alerts to keep your pet happy and healthy.
 
-## License
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Demo
 ![Techtonmagotchi Screenshot](images/Screenshot.png)
 
 ## Contact
-Michelle B. Hunter - [My Email](chellehunt88@gmail.com) - [My LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
+Michelle B. Hunter - - [My LinkedIn](www.linkedin.com/in/michelle-bedfordhunter)
 
 Project Link: [https://github.com/MBHunter88/techtonica-assignments](https://github.com/MBHunter88/techtonica-assignments)
 
@@ -65,5 +61,4 @@ Project Link: [https://github.com/MBHunter88/techtonica-assignments](https://git
 - **Technologies**: Lists the technologies used in the project.
 - **Installation**: Provides step-by-step instructions to clone and navigate the project.
 - **Usage**: Explains how to interact with the virtual pet game.
-- **License**: Details the licensing information for the project.
 - **Contact**: Provides contact information for further queries or collaboration.

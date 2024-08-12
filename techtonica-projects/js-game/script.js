@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const petNameInput = document.getElementById('petNameInput');
     const submitNameButton = document.getElementById('submitName');
     const petNameDisplay = document.getElementById('petName');
-    const nameInputSection = document.getElementById('nameInput');
+    const nameInputSection = document.getElementById('nameInput');   
     //add event listener to submit name 
     submitNameButton.addEventListener('click', () => {
-         petName = petNameInput.value.trim();
-        
+         petName = petNameInput.value.trim();   
+         
         if (petName) {
             petNameDisplay.textContent = petName;
             petNameInput.value = ''; // Clear the input field
@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //set interval for stat decrease
-    let healthDecreaseInterval = setInterval(decreaseHealthStats, 800); //adjust for presentation 
-    let happinessDecreaseInterval = setInterval(decreaseHappinessStats, 1000); //adjust for presentation 
+    let healthDecreaseInterval = setInterval(decreaseHealthStats, 600); //adjust for presentation 
+    let happinessDecreaseInterval = setInterval(decreaseHappinessStats, 800); //adjust for presentation 
 
     //create alert when stats reach 20 
     function lowStatAlert() {
