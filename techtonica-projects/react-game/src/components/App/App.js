@@ -8,19 +8,21 @@ import Cave from "../Cave";
 import Player from "../Player";
 
 
-//useState that sets game modes bases on onClick event handler
-function App() {
-  const [mode, setMode] = useState("start")
 
+function App() {
+  //useState that sets game modes and stats based on onClick event handler
+  const [mode, setMode] = useState("start")
+  const [gold, setGold] = useState(60)
+  const [inventory, setInventory] = useState([])
 
   return (
     <>
-    <Player/>
+    < Player gold={gold} setGold={setGold} inventory={inventory} />
     {mode === 'start' && <StartMenu onStartClick={() => setMode("townHall")}/>}
 
     {mode === 'townHall' && <TownHall onStoreClick={() => setMode("store")} onBattleClick={() => setMode("battle")} onCaveClick={() => setMode("cave")}/>}
 
-    {mode === 'store' && <Store onReturnClick={() => setMode("townHall")}/>}
+    {mode === 'store' && <Store onReturnClick={() => setMode("townHall")} gold={gold} setGold={setGold} inventory={inventory} setInventory={setInventory}/>}
 
     {mode === 'battle' && <Battle onReturnClick={() => setMode('townHall')}/>}
 
