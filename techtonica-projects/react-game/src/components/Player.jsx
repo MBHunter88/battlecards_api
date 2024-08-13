@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Player({ gold, inventory }) {
+function Player({ gold, inventory, health }) {
     //set defaults for player health, gold and weapon
 // const [health, setHealth] = useState(100);
 // const [gold, setGold] = useState(50);
@@ -14,9 +14,9 @@ function Player({ gold, inventory }) {
   return (
     <div>
       <h2>Player Stats</h2>
-      <p>Health: 100</p>
+      <p>Health: {health}</p>
       <p>Gold: {gold}</p>
-      <p>Inventory: {inventory.join(',') || "Empty"}</p>
+      <p>Inventory: {inventory.join(', ') || "Empty"}</p>
     </div>
   );
 }
