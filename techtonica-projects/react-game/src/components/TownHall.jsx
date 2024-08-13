@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./App/App.css"
 
  const TownHall = ({ onStoreClick, onCaveClick, onBattleClick}) => {
 
