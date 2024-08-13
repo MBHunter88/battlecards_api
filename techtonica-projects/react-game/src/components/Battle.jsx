@@ -1,10 +1,15 @@
 import React, { useState } from "react"
 
  const Battle = ({ onReturnClick }) => {
+//
+
+
     return (
         <>
-        <p>Lets fight!</p>
-        <button onClick={onReturnClick}>Return to Town Hall</button>
+        <p>Defeat the dragon and save the townspeople!</p>
+        <button>Attack</button>
+        <button>Dodge</button>
+        <button onClick={onReturnClick}>Run</button>
         </>
     )
 }
