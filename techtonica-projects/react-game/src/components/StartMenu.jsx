@@ -3,7 +3,7 @@ import "./App/App.css"
 
  const StartMenu = ({ onStartClick }) => {
     return (
-        <div className="startMenu">
+        <div className="button-container">
         <button className="startButton" onClick={onStartClick} >Start Game</button>
         </div>
     )

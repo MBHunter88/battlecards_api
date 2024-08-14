@@ -68,11 +68,13 @@ const Store = ({ onReturnClick, gold, setGold, inventory, setInventory, health, 
   //add onClick to "Sell Weapon" button to add gold and upgrade invemtory to hold current weapon
   return (
     <>
-      <p>Welcome to the store!</p>
+    <p>Welcome to the store!</p>
+    <div className="button-container"> 
       <button onClick={buyHealth}>Buy (10) Health</button>
       <button onClick={buyItem}>Buy weapon</button>
       <button onClick={sellItem}>Sell weapon</button>
       <button onClick={onReturnClick}>Return to Town Hall</button>
+      </div>
     </>
   )
 }

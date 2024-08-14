@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import "./App/App.css"
 
-function Player({ gold, inventory, health }) {
+function Player({ gold, inventory, health, status }) {
     //set defaults for player health, gold and weapon
 // const [health, setHealth] = useState(100);
 // const [gold, setGold] = useState(50);
@@ -12,7 +13,7 @@ function Player({ gold, inventory, health }) {
  //const addItem = (item) => setInventory([...inventory, item]); //when buying items in store(<Store/>)
 
   return (
-    <div>
+    <div className="playerStats">
       <h2>Player Stats</h2>
       <p>Health: {health}</p>
       <p>Gold: {gold}</p>

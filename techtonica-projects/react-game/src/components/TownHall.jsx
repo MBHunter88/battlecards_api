@@ -6,10 +6,12 @@ import "./App/App.css"
 
     return (
         <>
-        <p>Welcome to the TownHall</p>
+          <p>Welcome to the TownHall</p>
+        <div className="button-container">
         <button onClick={onStoreClick}>Go to store</button>
         <button onClick={onCaveClick}>Go to cave</button>
         <button onClick={onBattleClick}>Fight Dragon</button>
+        </div>
         </>
     )
 }
