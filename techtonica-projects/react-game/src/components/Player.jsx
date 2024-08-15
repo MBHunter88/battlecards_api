@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
 import "./App/App.css"
 
-function Player({ gold, inventory, health, status }) {
-    //set defaults for player health, gold and weapon
-// const [health, setHealth] = useState(100);
-// const [gold, setGold] = useState(50);
-// const [inventory, setInventory] = useState([]);
 
-//initialize functions that update player state
-//const takeDamage = (damage) => setHealth(health - damage); //when fighting monsters or dragon((<Cave/>/<Battle/>)
-  //const addGold = (amount) => setGold(gold + amount); //when defeating monsters of dragon (<Cave/>/<Battle/>)
- //const addItem = (item) => setInventory([...inventory, item]); //when buying items in store(<Store/>)
+//define Player
+const Player = () => {
 
-  return (
-    <div className="playerStats">
-      <h2>Player Stats</h2>
-      <p>Health: {health}</p>
-      <p>Gold: {gold}</p>
-      <p>Inventory: {inventory.join(', ') || "Empty"}</p>
-    </div>
-  );
-}
+  //initialize all Player stats
+  const [health, setHealth] = useState(100);
+  const [gold, setGold] = useState(50);
+  const [inventory, setInventory] = useState([]);
+  const [xp, setXp] = useState(0);
+  const [currentWeapon, setCurrentWeapon] = useState(0);
+
+  return {
+    health,
+    setHealth,
+    gold,
+    setGold,
+    inventory,
+    setInventory,
+    xp,
+    setXp,
+    currentWeapon,
+    setCurrentWeapon,
+  };
+};
 
 export default Player;

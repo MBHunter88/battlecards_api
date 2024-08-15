@@ -1,64 +1,36 @@
 import React, { useState } from "react"
-import Store from "./Store";
+import "./App/App.css"
 
-const Cave = ({ onReturnClick, weaponNames, weaponPower }) => {
-    const [health, setHealth] = useState(100);
-    const [inventory, setInventory] = useState([{ name: "stick", power: 5 }]);
-    const [gold, setGold] = useState(50);
-    const [isFighting, setIsFighting] = useState(false)
-    const [isWeapon, setIsWeapon] = useState(0)
-    const [enemyHealth, setEnemyHealth] = useState(100)
-    
-    //player xp
-    let xp = 0
-
-    //arr for eneimies found in cave
+const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setInventory, xp, setXp, currentWeapon }) => {
     const caveEnemies = [
-        {
-            name: "Sludger",
-            powerLevel: 2,
-            healthStat: 15
-        },
-        {
-            name: "Murloc",
-            powerLevel: 8,
-            healthStat: 60
-        }
-    ]
+        { name: 'Sludger', power: 2, health: 15 },
+        { name: 'Murloc', power: 8, health: 60 },
+    ];
+    const [isFighting, setIsFighting] = useState(false);
+    const [enemy, setEnemy] = useState(caveEnemies[0]);
 
-    //acc powerLevel in caveEnemies arr
-    const enemyPowerLevel = caveEnemies.map(power => power.powerLevel)
-    //console.log(enemyPowerLevel)
-
-    //if enemy is hit based enemyHealth will decrease based on damage = random number generated for the powerLevel of the weapon and the current player xp
+    //function to hold logic for player attack
     const playerAttack = () => {
-        if (isEnemyHit()) {
-            const currentWeaponPower = weaponPower[isWeapon];
-            const damage = currentWeaponPower + Math.floor(Math.random() * xp + 1);
-            setEnemyHealth(prevHealth => prevHealth - damage);
 
-            //player health will decrease based on the calcualted enemyAttackValue()
-            const newHealth = health - enemyAttackValue(caveEnemies[0].powerLevel); 
-            setHealth(newHealth);
-
-            //if player health reaches 0 alert the player has been defeated else if the enemy health reaches 0 alert the enemy has been defeated 
-            if (newHealth <= 0) {
-                alert("You have been defeated!");
-            } else if (enemyHealth - damage <= 0) {
-                alert("Enemy defeated!");
-            }
-        } else { //if enenmy is not hit alert the attack missed
-            alert("You miss.");
-        }
     };
 
+    //helper function to get enemy attack value
+    const enemyAttackValue = () => {
 
-    const enemyAttackValue = (enemyPowerLevel) => {
-        let hit = (enemyPowerLevel * 5) - (Math.floor(Math.random() * xp));
-        return hit
-    }
+    };
+
+    //helper function to determine if the player hits enemy
     const isEnemyHit = () => {
-        return Math.random() > .2 || health < 20;
+
+    };
+
+    //helper function to determine when enemy is defeated
+    const enemyDefeated = () => {
+
+    };
+
+    // helper function to determine when player is defeated
+    const lossFight = () => {
 
     }
 
@@ -66,26 +38,29 @@ const Cave = ({ onReturnClick, weaponNames, weaponPower }) => {
     return (
 
         <>
-            <p>Win gold by defeating the monsters!</p>
-            <div className="button-container">
-                {!isFighting ? (
-                    <>
+            <h1>Cave</h1>
+            <p>Health: {health}</p>
+            <p>Gold: {gold}</p>
+            {isFighting ? (
+                <>
+                    <p>Enemy: {enemy.name} (Health: {enemy.health})</p>
+                    <div className="button-container">
+                        <button onClick={playerAttack}>Attack</button>
+                        <button onClick={() => setIsFighting(false)}>Run</button>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <div className="button-container">
                         <button onClick={() => setIsFighting(true)}>Fight Sludger</button>
                         <button onClick={() => setIsFighting(true)}>Fight Murloc</button>
+                    </div>
+                    <div className="return-container">
                         <button onClick={onReturnClick}>Return to Town Hall</button>
-                    </>
-                ) : (
-                    <>
+                    </div>
+                </>
+            )}
 
-                        <button onClick={playerAttack}>Attack</button>
-                        <button>Dodge</button>
-                        <button onClick={() => setIsFighting(false)}>Run</button>
-                    </>
-                )}
-            </div>
-            <div className="enemyStats">
-                <p>Enemy Health: {enemyHealth}</p>
-            </div>
         </>
     );
 

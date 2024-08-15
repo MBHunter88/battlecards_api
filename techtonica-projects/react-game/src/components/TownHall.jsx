@@ -1,19 +1,20 @@
 import React, { useState } from "react"
 import "./App/App.css"
 
- const TownHall = ({ onStoreClick, onCaveClick, onBattleClick}) => {
+const TownHall = ({ onEnterCave, onEnterStore, onEnterDragonFight, onReturnToStart }) => {
+  return (
+    <>
+    <h1>Town Hall</h1>
+    <div className="button-container">
+      <button onClick={onEnterCave}>Enter Cave</button>
+      <button onClick={onEnterStore}>Enter Store</button>
+      <button onClick={onEnterDragonFight}>Fight the Dragon</button>
+    </div>
+    <div className="return-container">
+    <button onClick={onReturnToStart}>Return to Start Menu</button>
+    </div>
+    </>
+  );
+};
 
-
-    return (
-        <>
-          <p>Welcome to the TownHall</p>
-        <div className="button-container">
-        <button onClick={onStoreClick}>Go to store</button>
-        <button onClick={onCaveClick}>Go to cave</button>
-        <button onClick={onBattleClick}>Fight Dragon</button>
-        </div>
-        </>
-    )
-}
-
-export default TownHall
+export default TownHall;

@@ -1,11 +1,11 @@
-.playerStats {
+.stat-container {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     color: brown; 
     text-align: center;
 }
 
-p {
+p, h1 {
     text-align: center;
 }
 
@@ -16,6 +16,8 @@ p {
     gap: 10px;
     margin-top: 20px;
 }
+
+
 
 button {
     padding: 10px 20px;
@@ -43,3 +45,12 @@ button {
     cursor: not-allowed;
   }
   
+
+  .return-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: gray
+  }
