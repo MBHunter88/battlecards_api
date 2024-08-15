@@ -7,10 +7,10 @@ const Player = () => {
 
   //initialize all Player stats
   const [health, setHealth] = useState(100);
-  const [gold, setGold] = useState(50);
+  const [gold, setGold] = useState(150);
   const [inventory, setInventory] = useState([]);
   const [xp, setXp] = useState(0);
-  const [currentWeapon, setCurrentWeapon] = useState(0);
+  const [currentWeaponIndex, setCurrentWeaponIndex] = useState(-1);
 
   return {
     health,
@@ -21,8 +21,8 @@ const Player = () => {
     setInventory,
     xp,
     setXp,
-    currentWeapon,
-    setCurrentWeapon,
+    currentWeaponIndex,
+    setCurrentWeaponIndex,
   };
 };
 

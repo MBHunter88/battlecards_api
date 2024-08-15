@@ -29,8 +29,8 @@ const App = () => {
         />
       )}
       {mode === 'cave' && <Cave {...player} onReturnClick={onReturnClick} />}
-      {mode === 'store' && <Store {...player} onReturnClick={onReturnClick}/>}
-      {mode === 'dragonFight' && <DragonFight {...player} onReturnClick={onReturnClick}/>}
+      {mode === 'store' && <Store {...player} setMode={setMode} onReturnClick={onReturnClick}/>}
+      {mode === 'dragonFight' && <DragonFight {...player} setMode={setMode} onReturnClick={onReturnClick}/>}
     </div>
   );
 };

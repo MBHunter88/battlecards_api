@@ -1,16 +1,59 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./App/App.css"
 
-const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setInventory, xp, setXp, currentWeapon }) => {
+const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventory, xp, setXp, currentWeaponIndex, setMode }) => {
     const dragon = { name: 'Dragon', power: 20, health: 300 };
     const [isFighting, setIsFighting] = useState(false);
 
-//use similar logic form Cave component
+    const [enemy, setEnemy] = useState(null);
+    const [enemyHealth, setEnemyHealth] = useState(null);
+    const [enemyPower, setEnemyPower] = useState(null);
 
- const playerAttack = () => {
+    // Initialize enemy stats when the enemy is set
+    useEffect(() => {
+        if (enemy) {
+            setEnemyHealth(enemy.health);
+            setEnemyPower(enemy.power);
+        }
+    }, [enemy]);
 
- }
+    const playerAttack = () => {
+        if (isEnemyHit()) {
+            const damage = inventory[currentWeaponIndex]?.power + Math.floor(Math.random() * xp);
+            setEnemyHealth(prevHealth => prevHealth - damage);
+            if (enemyHealth - damage <= 0) {
+                alert(`${enemy.name} defeated! You gained XP and gold!`);
+                setXp(xp + enemyPower);
+                setGold(gold + 100); // More gold for defeating the dragon
+                setIsFighting(false);
+            }
+        } else {
+            alert("You missed!");
+        }
+        const enemyDamage = enemyAttackValue();
+        setHealth(health - enemyDamage);
+        if (health - enemyDamage <= 0) {
+            alert("You have been defeated by the Dragon! The game will reset.");
+            handleDefeat();
+        }
+    };
 
+    const enemyAttackValue = () => {
+        return enemyPower * 5 - Math.floor(Math.random() * xp);
+    };
+
+    const isEnemyHit = () => {
+        return Math.random() > 0.2;
+    };
+
+    const handleDefeat = () => {
+        setHealth(100);
+        setEnemy(null);
+        setIsFighting(false);
+        setTimeout(() => {
+            setMode('start');
+        }, 2000);
+    };
 
     return (
         <>
@@ -27,7 +70,10 @@ const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventor
         </>
       ) : (
         <div className="button-container">
-        <button onClick={() => setIsFighting(true)}>Fight the Dragon</button>
+       <button onClick={() => {
+                        setEnemy(dragon);
+                        setIsFighting(true);
+                    }}>Fight Dragon</button>
         </div>
       )}
       <div className="return-container">
