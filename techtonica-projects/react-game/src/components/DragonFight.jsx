@@ -58,8 +58,13 @@ const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventor
     return (
         <>
        <h1>Dragon Fight</h1>
+       <p>Confront the mighty dragon in a battle for the kingdom.</p>
+       <div className="player-stats">
       <p>Health: {health}</p>
       <p>Gold: {gold}</p>
+      <p>XP: {xp}</p>
+      <p>Current Weapon: {inventory.length > 0 ? inventory[currentWeaponIndex].name : "Empty"}</p>
+      </div>
       {isFighting ? (
         <>
           <p>Dragon: {dragon.name} (Health: {dragon.health})</p>

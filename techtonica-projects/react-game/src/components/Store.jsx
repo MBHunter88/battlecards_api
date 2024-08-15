@@ -21,7 +21,8 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
     {
       name: "Sword",
       power: 100
-    }
+    }, 
+    {} //added empty object to mitigate error for buying all weapons
   ]
 
 
@@ -83,7 +84,14 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
 
   return (
     <>
-      <p>Welcome to the store!</p>
+      <h1>Store</h1>
+      <p>Buy weapons and supplies.</p>
+      <div className="player-stats">
+      <p>Inventory: {inventory.length > 0 ? inventory.map(item => item.name).join(', ') : "Empty"}</p>
+            <p>Gold: {gold}</p>
+            <p>Health: {health}</p>
+            
+      </div>
       <div className="button-container">
         <button onClick={buyItem}>Buy {weapons[currentWeaponIndex + 1].name}</button>
         <button onClick={buyHealth}>Buy Health (10 Gold)</button>

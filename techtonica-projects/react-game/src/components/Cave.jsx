@@ -80,8 +80,13 @@ const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setM
 
         <>
             <h1>Cave</h1>
+            <p>Face the monsters lurking in the dark.</p>
+            <div className="player-stats">
             <p>Health: {health}</p>
             <p>Gold: {gold}</p>
+            <p>XP: {xp}</p>
+            <p>Current Weapon: {inventory.length > 0 ? inventory[currentWeaponIndex].name : "Empty"}</p>
+            </div>
             {isFighting ? (
                 <>
                     <p>Enemy: {enemy.name} (Health: {enemyHealth})</p>

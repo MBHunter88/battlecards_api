@@ -13,6 +13,7 @@ const Player = () => {
   const [currentWeaponIndex, setCurrentWeaponIndex] = useState(-1);
 
   return {
+    
     health,
     setHealth,
     gold,
@@ -23,6 +24,7 @@ const Player = () => {
     setXp,
     currentWeaponIndex,
     setCurrentWeaponIndex,
+   
   };
 };
 
