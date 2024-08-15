@@ -10,11 +10,11 @@ import Player from "../Player";
 
 
 function App() {
-  //useState that sets game modes and stats based on onClick event handler
+  //useState that sets game modes and player stats based on onClick event handler
   const [mode, setMode] = useState("start")
   const [health, setHealth] = useState(100);
   const [gold, setGold] = useState(60)
-  const [inventory, setInventory] = useState([])
+  const [inventory, setInventory] = useState(["Stick"])
 
 
   return (
