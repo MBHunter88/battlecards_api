@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./App/App.css"
+import witch from "./App/assests/witch.jpg"
 
 const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setInventory, currentWeaponIndex, setCurrentWeaponIndex }) => {
 
@@ -84,8 +85,10 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
 
   return (
     <>
+    <div className="game-container">
       <h1>Store</h1>
       <p>Buy weapons and supplies.</p>
+      <img src={witch} />
       <div className="player-stats">
       <p>Inventory: {inventory.length > 0 ? inventory.map(item => item.name).join(', ') : "Empty"}</p>
             <p>Gold: {gold}</p>
@@ -100,7 +103,7 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
       <div className="return-container">
         <button onClick={onReturnClick}>Return to Town Hall</button>
       </div>
-
+      </div>
     </>
   )
 }

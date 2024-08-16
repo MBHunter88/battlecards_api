@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./App/App.css"
+import dragonimg from "./App/assests/dragonimg.jpg"
 
 const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventory, xp, setXp, currentWeaponIndex, setMode }) => {
     const dragon = { name: 'Dragon', power: 20, health: 300 };
@@ -57,6 +58,7 @@ const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventor
 
     return (
         <>
+    <div className="game-container">
        <h1>Dragon Fight</h1>
        <p>Confront the mighty dragon in a battle for the kingdom.</p>
        <div className="player-stats">
@@ -67,6 +69,7 @@ const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventor
       </div>
       {isFighting ? (
         <>
+        <img src={dragonimg}/>
           <p>Dragon: {dragon.name} (Health: {dragon.health})</p>
           <div className="button-container">
           <button onClick={playerAttack}>Attack</button>
@@ -83,6 +86,7 @@ const DragonFight = ({ onReturnClick, health, setHealth, gold, setGold, inventor
       )}
       <div className="return-container">
       <button onClick={onReturnClick}>Return to Town Hall</button>
+      </div>
       </div>
         </>
     )

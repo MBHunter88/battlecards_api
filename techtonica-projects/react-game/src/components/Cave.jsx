@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./App/App.css"
+import murlocimg from "./App/assests/murloc.png"
+import sludgerimg from "./App/assests/sludger.png"
 
 const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setMode, xp, setXp, currentWeaponIndex }) => {
      console.log("Current Weapon Index in Cave:", currentWeaponIndex);
@@ -79,6 +81,7 @@ const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setM
     return (
 
         <>
+        <div className="game-container">
             <h1>Cave</h1>
             <p>Face the monsters lurking in the dark.</p>
             <div className="player-stats">
@@ -87,8 +90,10 @@ const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setM
             <p>XP: {xp}</p>
             <p>Current Weapon: {inventory.length > 0 ? inventory[currentWeaponIndex].name : "Empty"}</p>
             </div>
+            
             {isFighting ? (
                 <>
+  
                     <p>Enemy: {enemy.name} (Health: {enemyHealth})</p>
                     <div className="button-container">
                         <button onClick={playerAttack}>Attack</button>
@@ -97,6 +102,9 @@ const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setM
                 </>
             ) : (
                 <>
+              <img src={sludgerimg} />
+                __
+              <img src={murlocimg} />
                     <div className="button-container">
                         <button onClick={() => {
                             setEnemy(caveEnemies[0]);
@@ -106,13 +114,15 @@ const Cave = ({ onReturnClick, health, setHealth, gold, setGold, inventory, setM
                             setEnemy(caveEnemies[1]);
                             setIsFighting(true)
                         }}>Fight Murloc</button>
+                        
                     </div>
                     <div className="return-container">
                         <button onClick={onReturnClick}>Return to Town Hall</button>
                     </div>
+                    
                 </>
             )}
-
+            </div>
         </>
     );
 
