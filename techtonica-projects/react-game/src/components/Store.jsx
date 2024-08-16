@@ -22,36 +22,36 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
     {
       name: "Sword",
       power: 100
-    }, 
+    },
     {} //added empty object to mitigate error for buying all weapons
   ]
 
 
   //buy items from store to add to inventory
- 
+
   const buyItem = () => {
-    try {
-        // Check if there's a weapon available to buy
-        if (currentWeaponIndex < weapons.length - 1) {
-            if (gold >= 30) { // Check if enough gold
-                const newWeapon = weapons[currentWeaponIndex + 1]; // Get the next weapon in the list
-                setGold(gold - 30); // Deduct 30 gold from the player's total
-                setInventory([...inventory, newWeapon]); // Add the new weapon to the inventory array
-                setCurrentWeaponIndex(currentWeaponIndex + 1); // Update the index to point to the current weapon
-            } else {
-                alert("Not enough gold!");
-            }
-        } else {
-            throw new Error("All weapons have been purchased");
+    // Check if there's a weapon available to buy
+    if (currentWeaponIndex < weapons.length - 1) {
+      if (gold >= 30) { // Check if enough gold
+        const newWeapon = weapons[currentWeaponIndex + 1]; // Get the next weapon in the list
+        setGold(gold - 30); // Deduct 30 gold from the player's total
+        setInventory([...inventory, newWeapon]); // Add the new weapon to the inventory array
+        setCurrentWeaponIndex(currentWeaponIndex + 1); // Update the index to point to the current weapon
+
+        // Check if the next weapon is the last one
+        if (currentWeaponIndex + 1 === weapons.length - 2) {
+          alert("Congratulations! You have purchased the final weapon.");
         }
-    } catch (error) {
-        console.error(error);
-        alert("This app doesn't support buying more weapons. You have purchased all available weapons.");
+      } else {
+        alert("Not enough gold!");
+      }
+    } else if (currentWeaponIndex === weapons.length - 1) {
+      alert("You have purchased all available weapons.");
     }
-};
+  };
 
 
-  
+
 
   console.log("Current Weapon :", weapons[currentWeaponIndex]);
   console.log("Next Weapon:", weapons[currentWeaponIndex + 1]);
@@ -85,24 +85,24 @@ const Store = ({ onReturnClick, health, setHealth, gold, setGold, inventory, set
 
   return (
     <>
-    <div className="game-container">
-      <h1>Store</h1>
-      <p>Buy weapons and supplies.</p>
-      <img src={witch} />
-      <div className="player-stats">
-      <p>Inventory: {inventory.length > 0 ? inventory.map(item => item.name).join(', ') : "Empty"}</p>
-            <p>Gold: {gold}</p>
-            <p>Health: {health}</p>
-            
-      </div>
-      <div className="button-container">
-        <button onClick={buyItem}>Buy {weapons[currentWeaponIndex + 1].name}</button>
-        <button onClick={buyHealth}>Buy Health (10 Gold)</button>
-        <button onClick={sellItem}>Sell Weapon</button>
-      </div>
-      <div className="return-container">
-        <button onClick={onReturnClick}>Return to Town Hall</button>
-      </div>
+      <div className="game-container">
+        <h1>Store</h1>
+        <p>Buy weapons and supplies.</p>
+        <img src={witch} />
+        <div className="player-stats">
+          <p>Inventory: {inventory.length > 0 ? inventory.map(item => item.name).join(', ') : "Empty"}</p>
+          <p>Gold: {gold}</p>
+          <p>Health: {health}</p>
+
+        </div>
+        <div className="button-container">
+          <button onClick={buyItem}>Buy {weapons[currentWeaponIndex + 1].name}</button>
+          <button onClick={buyHealth}>Buy Health (10 Gold)</button>
+          <button onClick={sellItem}>Sell Weapon</button>
+        </div>
+        <div className="return-container">
+          <button onClick={onReturnClick}>Return to Town Hall</button>
+        </div>
       </div>
     </>
   )
