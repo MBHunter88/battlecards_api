@@ -6,7 +6,7 @@ This project is a RESTful API for managing battlecards in a game-like environmen
 
 - **Create a Battlecard**: Add new battlecards to the database.
 - **Retrieve All Battlecards**: Fetch a list of all battlecards stored in the database.
-- **Update a Battlecard**: Update battle cards with new versions. 
+- **Update a Battlecard**: Update battlecards with new versions. 
 - **Delete a Battlecard**: Remove a battlecard from the database by its ID.
 
 ## Technologies Used
@@ -101,13 +101,13 @@ Response: JSON object of the created battlecard.
 
 ### 3. PUT/battlecards
 
-Replace existing nattle card with new version using example JSON object above.
+Replace existing battle card with new version using example JSON object above.
 Response: JSON object of the update battlecard.  
 ![put route](public/bcputroute.png)
 
 ### 4. DELETE/battlecards
 
-Delete battlecar by it's ID.
+Delete battlecard by it's ID.
 Response: Message confirming deletion. 
 
 ![delete route](public/bcdeleteroute.png)
