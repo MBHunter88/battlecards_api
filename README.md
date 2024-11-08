@@ -78,10 +78,13 @@ The server will start on `http://localhost:5000`
 Retrieve all battlecards.
 Response: JSON array of battlecards. 
 
+![get route](public/bcgetroute.png)
+
 ### 2. POST/battlecards
 
 Create new battlecard with request body example:
 
+````python
 {
     "name": "New Card",
     "tier": 1,
@@ -89,18 +92,25 @@ Create new battlecard with request body example:
     "health": 2,
     "abilities": ["Some Ability"]
 }
+````
+
 Response: JSON object of the created battlecard. 
+
+![post route](public/bcpostroute.png)
 
 
 ### 3. PUT/battlecards
 
 Replace existing nattle card with new version using example JSON object above.
 Response: JSON object of the update battlecard.  
+![put route](public/bcputroute.png)
 
 ### 4. DELETE/battlecards
 
 Delete battlecar by it's ID.
 Response: Message confirming deletion. 
+
+![delete route](public/bcdeleteroute.png)
 
 ## Error Handling
 
